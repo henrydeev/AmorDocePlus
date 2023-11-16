@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SweetAlert Exemplo</title>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+<script>
+Swal.fire({
+  title: 'Mod criado por @henrydeev_ 🇧🇷💖!',
+  text: 'Esse mod de Amor Doce basicamente altera o valor das moedas e também dos PAs, use com moderação!',
+  showCancelButton: true,
+  confirmButtonColor: '#3085d6',
+  cancelButtonColor: '#d33',
+  confirmButtonText: 'Iniciar'
+}).then((result) => {
+  if (result.isConfirmed) {
+    setInterval(function() {
+      var elementos = document.getElementsByTagName('*');
+
+      for (var i = 0; i < elementos.length; i++) {
+        var elemento = elementos[i];
+
+        if (elemento.innerHTML.includes('220')) {
+          elemento.innerHTML = elemento.innerHTML.replace(/220/g, '999999');
+        }
+
+        if (elemento.innerHTML.includes('505')) {
+          elemento.innerHTML = elemento.innerHTML.replace(/505/g, '999999');
+        }
+      }
+    }, 1000);
+  }
+});
+</script>
+
+</body>
+</html>
